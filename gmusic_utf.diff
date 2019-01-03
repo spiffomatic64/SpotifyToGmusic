@@ -1,0 +1,17 @@
+***************
+*** 327,333 ****
+      logging_to_file = True
+      try:
+          make_sure_path_exists(os.path.dirname(log_filepath), 0o700)
+!         debug_handler = logging.FileHandler(log_filepath)
+      except (OSError, IOError):
+          logging_to_file = False
+          debug_handler = logging.StreamHandler()
+--- 327,333 ----
+      logging_to_file = True
+      try:
+          make_sure_path_exists(os.path.dirname(log_filepath), 0o700)
+!         debug_handler = logging.FileHandler(log_filepath, encoding = "UTF-8")
+      except (OSError, IOError):
+          logging_to_file = False
+          debug_handler = logging.StreamHandler()
